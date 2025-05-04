@@ -1,0 +1,99 @@
+:root {
+  /* Light mode */
+  --light-text: #222430;
+  --light-bg: #f7f7f7;
+  --light-link: #0000ff;
+  --light-link-visited: #aa00ff;
+
+  /* Dark mode */
+  --dark-text: #f7f7f7;
+  --dark-bg: #222430;
+  --dark-link: #ffff00;
+  --dark-link-visited: #ffaa00;
+
+  /* Default mode */
+  --text-color: var(--light-text);
+  --bg-color: var(--light-bg);
+  --link-color: var(--light-link);
+  --link-visited-color: var(--light-link-color)
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: var(--dark-text);
+    --bg-color: var(--dark-bg);
+    --theme-color: var(--dark-theme);
+    --link-color: var(--dark-link);
+    --link-visited-color: var(--dark-link-visited)
+  }
+}
+
+input[type=submit] {
+  border: 1px solid var(--text-color);
+  background: var(--bg-color);
+  border-radius: 4px;
+  color: inherit;
+}
+
+@each $theme in (auto, dark, light) {
+  body.theme-#{$theme} {
+    input[type=submit][value=#{$theme}] {
+      background: var(--text-color);
+      color: var(--bg-color);
+    }
+  }
+}
+
+body.theme-dark {
+  --text-color: var(--dark-text);
+  --bg-color: var(--dark-bg);
+  --theme-color: var(--dark-theme);
+  --link-color: var(--dark-link);
+  --link-visited-color: var(--dark-link-visited)
+}
+
+body.theme-light {
+  --text-color: var(--light-text);
+  --bg-color: var(--light-bg);
+  --theme-color: var(--light-theme);
+  --link-color: var(--light-link);
+  --link-visited-color: var(--light-link-visited)
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+header, main, footer {
+  padding: 1rem;
+}
+
+a {
+  color: var(--link-color);
+
+  &:visited {
+    color: var(--link-visited-color);
+  }
+}
