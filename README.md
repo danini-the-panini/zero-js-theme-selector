@@ -1,24 +1,19 @@
-# README
+# Zero-JS Theme Selector
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Selects between Dark, Light, and Auto themes using a form submit and a cookie.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+Ruby 3.4.3
 
-* System dependencies
+## Setup
 
-* Configuration
+```
+bundle install
+```
 
-* Database creation
+## Run
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bin/dev
+```

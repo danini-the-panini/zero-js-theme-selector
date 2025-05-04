@@ -1,8 +1,8 @@
 # Name of your application. Used to uniquely configure containers.
-service: zero_js_theme_switcher
+service: zero_js_theme_selector
 
 # Name of the container image.
-image: your-user/zero_js_theme_switcher
+image: your-user/zero_js_theme_selector
 
 # Deploy to these servers.
 servers:
