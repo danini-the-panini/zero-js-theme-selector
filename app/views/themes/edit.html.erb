@@ -1,7 +1,7 @@
-<%= form_with url: theme_path, method: :patch do |f| %>
+<%= form_with url: theme_path, method: :patch, html: { data: { controller: "theme" } } do |f| %>
 
-  <%= f.submit "auto" %>
-  <%= f.submit "light" %>
-  <%= f.submit "dark" %>
+  <%= f.submit "auto", data: { action: "theme#selectTheme:prevent" }%>
+  <%= f.submit "light", data: { action: "theme#selectTheme:prevent" } %>
+  <%= f.submit "dark", data: { action: "theme#selectTheme:prevent" } %>
 
 <% end %>
